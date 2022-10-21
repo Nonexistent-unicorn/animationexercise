@@ -18,29 +18,30 @@ function setup() {
 
 function draw() {
 //add '//' to make a kaleidiscope
-background(248,131,121);
+//background(248,131,121);
 
-orbitControl();
-  rotateY(.1);
-  rotateX(.1)
+//orbitControl();
+  //rotateY(.1);
+  //rotateX(.1)
 
-//r = map(mouseX, 248,131,225,250)
-//g = map(mouseX, 30, 600, 125, 135)
-//b = map(mouseY, 50, 600, 115, 125)
-//background(r, g, b);
+//makes BG change color depending on where cursor is on screen
+r = map(mouseX, 50,600,0,250)
+g = map(mouseX, 30, 600, 0, 135)
+b = map(mouseY, 50, 600, 0, 125)
+background(r, g, b);
 
   noFill()
   stroke(100)
 
  //moves ball around screen
-  //var x = sin(frameCount) * 200
-  //var y = cos(frameCount) * 200
-  //var z = sin(frameCount * .01) * 400
-  //translate(x, y, z)
+  var x = sin(frameCount) * 200
+  var y = cos(frameCount) * 200
+  var z = sin(frameCount * .01) * 400
+  translate(x, y, z)
 
-  //rotateX(frameCount*.01)
-  //rotateY(frameCount)
-  //rotateZ(frameCount)
+  rotateX(frameCount*.01)
+  rotateY(frameCount)
+  rotateZ(frameCount)
 
  
   for (var i = 1; i < 360; i++) {
@@ -52,11 +53,12 @@ orbitControl();
 
     stroke(r, g, b)
 
-    rotateY(i*4)
-   
-    //ellipse(0,0,100)
+    rotateY(i/2)
+    rotateX(i/2)
+
+    ellipse(0,0,400)
   //Slinky effect
-   ellipse(mouseX,mouseY, 40, 40)
+   //ellipse(mouseX,mouseY, 40, 40)
   
     pop()
   }  
