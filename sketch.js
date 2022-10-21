@@ -17,49 +17,49 @@ function setup() {
 
 
 function draw() {
-//background(0);
+//add '//' to make a kaleidiscope
+background(248,131,121);
 
 orbitControl();
-  rotateY(.002);
-  rotateX(.001)
+  rotateY(.1);
+  rotateX(.1)
 
-//r = map(mouseX, 248,131,121,0)
-//g = map(mouseX, 30, 600, 255, 20)
-//b = map(mouseY, 50, 600, 255, 0)
+//r = map(mouseX, 248,131,225,250)
+//g = map(mouseX, 30, 600, 125, 135)
+//b = map(mouseY, 50, 600, 115, 125)
 //background(r, g, b);
 
   noFill()
   stroke(100)
 
- //moves ball around screen--
-  //var x = sin(frameCount * 5) * 50
-  //var y = cos(frameCount) * 50
-  //var z = sin(frameCount * 4) * 50
+ //moves ball around screen
+  //var x = sin(frameCount) * 200
+  //var y = cos(frameCount) * 200
+  //var z = sin(frameCount * .01) * 400
   //translate(x, y, z)
 
-  rotateX(frameCount)
-  rotateY(frameCount)
-  rotateZ(frameCount* .01)
+  //rotateX(frameCount*.01)
+  //rotateY(frameCount)
+  //rotateZ(frameCount)
 
-
-  
+ 
   for (var i = 1; i < 360; i++) {
     push()
 
-    var r = map(sin(i), -1, 1, 200, 50)
-    var g = map(sin(i), -1, 1, 50, 200)
-    var b = map(cos(i), -1, 0, 50, 200)
+    var r = map(sin(i*1), -1, 1, 50, 200)
+    var g = map(sin(i*1), -1, 1, 200, 50)
+    var b = map(cos(i*1), -1, 1, 50, 200)
 
     stroke(r, g, b)
 
-    rotateY(i/2)
-
-    ellipse(0,0,400)
-    //ellipse(mouseY, 0, 200)
-
+    rotateY(i*4)
+   
+    //ellipse(0,0,100)
+  //Slinky effect
+   ellipse(mouseX,mouseY, 40, 40)
+  
     pop()
   }  
-
 
   }
 
