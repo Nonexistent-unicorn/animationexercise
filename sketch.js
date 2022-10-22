@@ -17,7 +17,7 @@ function setup() {
 
 
 function draw() {
-//add '//' to make a kaleidiscope
+//add '//' to BG's to make a kaleidiscope 
 //background(248,131,121);
 
 //orbitControl();
@@ -57,7 +57,7 @@ background(r, g, b);
     rotateX(i/2)
 
     ellipse(0,0,400)
-  //Slinky effect
+  //Slinky effect, works with orbitcontrol
    //ellipse(mouseX,mouseY, 40, 40)
   
     pop()
